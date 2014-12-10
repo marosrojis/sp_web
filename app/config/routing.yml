@@ -1,0 +1,12 @@
+autodoprava_app:
+    resource: "@AutodopravaAppBundle/Resources/config/routing.yml"
+    prefix:   /
+
+login:
+    path: /login
+    defaults: { _controller: AutodopravaAppBundle:Prihlaseni:login }
+login_check:
+    path: /login_check
+logout:
+    path: /logout
+

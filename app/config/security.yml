@@ -1,0 +1,33 @@
+security:
+    providers:
+        webservice:
+            id: webservice_user_provider
+        in_memory:
+            memory: ~
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        secured_area:
+            pattern: ^/
+            http_basic: ~
+            anonymous: ~
+            form_login:
+                login_path: /login
+                check_path: /login_check
+                provider: webservice
+            logout:
+                path:   /logout
+                target: /
+
+    encoders:
+        Autodoprava\AppBundle\Security\User\WebserviceUser:
+            algorithm:   sha512 
+            iterations: 1 
+            encode_as_base64: false 
+
+
+    access_control:
+        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin, roles: ROLE_ADMIN }

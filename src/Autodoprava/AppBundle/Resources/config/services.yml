@@ -1,0 +1,28 @@
+parameters:
+    webservice_user_provider.class: Autodoprava\AppBundle\Security\User\WebserviceUserProvider
+
+services:
+    webservice_user_provider:
+        class: "%webservice_user_provider.class%"
+        arguments: ["@connection"]
+    connection:
+        class: Autodoprava\AppBundle\Model\DBConnection
+        arguments: ["%database_driver%", "%database_host%", "%database_user%", "%database_password%", "%database_name%"]
+    otherRepository:
+        class: Autodoprava\AppBundle\Model\OtherRepository
+        arguments: ["@connection"]
+    carsRepository:
+        class: Autodoprava\AppBundle\Model\CarsRepository
+        arguments: ["@connection"]
+    ordersRepository:
+        class: Autodoprava\AppBundle\Model\OrdersRepository
+        arguments: ["@connection"]
+    customerRepository:
+        class: Autodoprava\AppBundle\Model\CustomerRepository
+        arguments: ["@connection"]
+    usersRepository:
+        class: Autodoprava\AppBundle\Model\UsersRepository
+        arguments: ["@connection"]
+    fotoRepository:
+        class: Autodoprava\AppBundle\Model\FotoRepository
+        arguments: ["@connection"]

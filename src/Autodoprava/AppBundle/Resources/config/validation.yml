@@ -1,0 +1,5 @@
+Autodoprava\AppBundle\Entity\Document:
+    properties:
+        file:
+            - File:
+                maxSize: 60000000

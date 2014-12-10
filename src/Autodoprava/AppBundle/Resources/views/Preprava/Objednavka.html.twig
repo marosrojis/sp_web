@@ -1,0 +1,104 @@
+{% extends "AutodopravaAppBundle::layout.html.twig" %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-2 text-left">
+			<h1>{% block title %}Objednávka - {{ transportName }} / {{ carName }}{% endblock %}</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="line_gray"></div>
+	</div>
+	<div class="content_page">
+		<div class="container col-md-4 col-md-offset-1">
+			Pokud jste již u nás objednával službu, zadejte pouze váš email. <br><br>
+			<form method="POST" id="formReg">
+				{{ form_errors(formReg) }}
+				<div class="row">
+					{{ form_label(formReg.email, 'Zadejte váš email') }}
+					{{ form_errors(formReg.email) }}
+				</div>
+				<div class="row">
+					<div class="col-md-8">
+						{{ form_widget(formReg.email, {'attr': {'class': 'form-control'}}) }}
+					</div>
+				</div>
+				<br>
+				{{ form_rest(formReg) }}
+				<br>
+				<div class="row">
+
+					<input type="submit" value="Odeslat objednávku" class="btn btn-default" />
+				</div>
+			</form>
+		</div>
+		<div class="container col-md-4 col-md-offset-1">
+			Vyplňte prosím pro pokračování objednávky vaše údaje. <br><br>
+			<form method="POST" id="form">
+				{{ form_errors(form) }}
+
+				<div class="order_info_sizeCol" style="width: 80px">
+					{{ form_label(form.jmeno, 'Jméno') }}
+				</div>
+				<div class="order_info_sizeCol">
+					{{ form_errors(form.jmeno) }}
+				</div>
+				<div class="order_info_form">
+					{{ form_widget(form.jmeno, {'attr': {'class': 'form-control'}}) }}
+				</div>
+				<div class="order_info_sizeCol">
+					{{ form_label(form.prijmeni, 'Přijmení') }}
+				</div>
+				<div class="order_info_sizeCol">
+					{{ form_errors(form.prijmeni) }}
+				</div>
+				<div class="order_info_form">
+					{{ form_widget(form.prijmeni, {'attr': {'class': 'form-control'}}) }}
+				</div>
+				<div class="order_info_sizeCol">
+					{{ form_label(form.email, 'Email') }}
+				</div>
+				<div class="order_info_sizeCol">
+					{{ form_errors(form.email) }}
+				</div>
+				<div class="order_info_form">
+					{{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+				</div>
+				<div class="order_info_sizeCol">
+					{{ form_label(form.ulice, 'Ulice') }}
+				</div>
+				<div class="order_info_sizeCol">
+					{{ form_errors(form.ulice) }}
+				</div>
+				<div class="order_info_form">
+					{{ form_widget(form.ulice, {'attr': {'class': 'form-control'}}) }}
+				</div>
+				<div class="order_info_sizeCol">
+					{{ form_label(form.mesto, 'Město') }}
+				</div>
+				<div class="order_info_sizeCol">
+					{{ form_errors(form.mesto) }}
+				</div>
+				<div class="order_info_form">
+					{{ form_widget(form.mesto, {'attr': {'class': 'form-control'}}) }}
+				</div>
+				<div class="order_info_sizeCol">
+					{{ form_label(form.psc, 'PSČ') }}
+				</div>
+				<div class="order_info_sizeCol">
+					{{ form_errors(form.psc) }}
+				</div>
+				<div class="order_info_form">
+					{{ form_widget(form.psc, {'attr': {'class': 'form-control'}}) }}
+				</div>
+
+				{{ form_rest(form) }} 
+				<br>
+				<input type="submit" value="Odeslat objednávku" class="btn btn-default" />
+			</form>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

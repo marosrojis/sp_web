@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+{% block head %}
+    {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/app/bootstrap/dist/css/bootstrap.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/design.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/designAdmin.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/styleAdmin.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/app/bxslider/jquery.bxslider.css') }}" />
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+{% block javascripts %}
+<script src="{{ asset('//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js') }}"></script>
+<script src="{{ asset('bundles/app/bxslider/jquery.bxslider.min.js') }}"></script>
+<script src="{{ asset('bundles/app/bootstrap/dist/js/bootstrap.js') }}"></script>
+<script src="{{ asset('bundles/app/js/js.js') }}"></script>
+{% endblock %}
+<div id="center">
+    <div id="background">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 menu_bg pull-left">
+                    <nav>
+                        <ul class="nav nav-pills row col-md-offset-2 menu">
+                            <li role="presentation" class="col-md-5 menu_line"><a href="{{ path('indexObjednavky') }}">objednávky</a></li>
+                            <li role="presentation" class="col-md-5 menu_line"><a href="{{ path('indexCar') }}">auta</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="logo"></div> 
+                <div class="col-md-7 menu_bg pull-right">
+                    <ul class="nav nav-pills row col-md-offset-1 menu">
+                        <li role="presentation" class="col-md-2 menu_line"><a href="{{ path('indexPage') }}">editace stránek</a></li>
+                        <li role="presentation" class="col-md-2 menu_line"><a href="{{ path('editContact') }}">kontakt</a></li>
+                        <li role="presentation" class="col-md-2 menu_line"><a href="{{ path('logout') }}">odhlásit</a></li>
+                    </ul>
+                </div> 
+            </div>
+            <div class="container">
+                {% for flashMessage in app.session.flashbag.get('notice') %}
+                <div class="flash-message">
+                    {{ flashMessage }}
+                </div>
+                {% endfor %}
+            </div>
+            {% block content %}{% endblock %}
+            <div class="footer container-fluid">
+                <div class="row">
+                    <footer>
+                        <div class="bottom_bg_black">
+                            Copyright © 2014 - www.autodoprava.cz
+                        </div>
+                    </footer>
+                </div>
+            </div>
+        </div>           
+    </div>
+</div>
+{% endblock %}

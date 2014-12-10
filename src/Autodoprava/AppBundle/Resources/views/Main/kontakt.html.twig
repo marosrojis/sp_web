@@ -1,0 +1,36 @@
+{% extends "AutodopravaAppBundle::layout.html.twig" %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-2 text-left">
+			<h1>{% block title %}Kontakt{% endblock %}</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="line_gray"></div>
+	</div>
+	<div class="content_page">
+		<div class="container col-md-9 col-md-offset-1 text-left">
+			<div class="row contactMargin">
+				<div class="bottom_map col-md-2 col-md-offset-2"></div>
+				<div class="contactInfo col-md-offset-1 col-md-6">
+					<div class="row">
+						<div class="col-md-5">{{ contact.ulice }}</div>
+						<div class="col-md-6"><strong>Mobil:</strong> {{ contact.mobil }} </div><br>
+					</div><br>
+					<div class="row">
+						<div class="col-md-5">{{ contact.mesto }}</div>
+						<div class="col-md-6"><strong>Telefon:</strong> {{ contact.telefon }} </div><br><br>
+					</div>
+					<div class="row">
+						<div class="col-md-5">{{ contact.psc }}</div>
+						<div class="col-md-6"><strong>Email:</strong> <a href="mailto: {{ contact.email }}">{{ contact.email }} </a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends "AutodopravaAppBundle::adminLayout.html.twig" %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-2 text-left">
+			<h1>{% block title %}Auta{% endblock %}</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="line_gray"></div>
+	</div>
+	<div class="content_page">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2">
+					<a href="{{ path('new_car') }}"><h4>Přidat auto</h4></a>
+				</div>
+			</div>
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>ID auta</th>
+						<th>Název</th>
+						<th>Přeprava</th>
+						<th>Vyřazeno</th>
+						<th>Detail</th>
+						<th>Foto</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for car in cars %}
+					<tr>
+						<td>{{ car.id_auta }}</td>
+						<td>{{ car.nazev }}</td>
+						<td>{{ car.nazev_prepravy }}</td>
+						<td>
+							<a href="{{ path('edit_status_car', {'id': car.id_auta}) }}">
+								{% if car.vyrazeno == 0 %}
+								<span class="glyphicon glyphicon-remove"></span>
+								{% else %}
+								<span class="glyphicon glyphicon-ok"></span>
+								{% endif %}
+							</a>
+						</td>
+						<td>
+							<a href="{{ path('edit_car', {'id': car.id_auta}) }}"><span class="glyphicon glyphicon-pencil"></span></a>
+						</td>
+						<td>
+							<a href="{{ path('foto_car', {'idCar': car.id_auta}) }}"><span class="glyphicon glyphicon-pencil"></span></a>
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

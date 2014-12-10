@@ -1,0 +1,85 @@
+{% extends "AutodopravaAppBundle::adminLayout.html.twig" %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-2 text-left">
+			<h1>{% block title %}Editace kontaktu{% endblock %}</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="line_gray col-md-12"></div>
+	</div>
+	<div class="content_page">
+		<div class="row">
+			<div class="container col-md-offset-2 col-md-7">
+				<form method="POST" id="form" enctype="multipart/form-data" class="form-horizontal" role="form">
+					{{ form_errors(form) }}
+					<div class="form-group">
+						<div class="col-sm-1">
+							{{ form_label(form.email, 'Email', {'attr': {'class': 'control-label'}}) }}
+						</div>
+						{{ form_errors(form.email) }}
+						<div class="col-sm-4">
+							{{ form_widget(form.email, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-1">
+							{{ form_label(form.mobil, 'Mobil', {'attr': {'class': 'control-label'}}) }}
+						</div>
+						{{ form_errors(form.mobil) }}
+						<div class="col-sm-4">
+							{{ form_widget(form.mobil, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-1">
+							{{ form_label(form.telefon, 'Telefon', {'attr': {'class': 'control-label'}}) }}
+						</div>
+						{{ form_errors(form.telefon) }}
+						<div class="col-sm-4">
+							{{ form_widget(form.telefon, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-1">
+							{{ form_label(form.ulice, 'Ulice', {'attr': {'class': 'control-label'}}) }}
+						</div>
+						{{ form_errors(form.ulice) }}
+						<div class="col-sm-4">
+							{{ form_widget(form.ulice, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-1">
+							{{ form_label(form.mesto, 'Město', {'attr': {'class': 'control-label'}}) }}
+						</div>
+						{{ form_errors(form.mesto) }}
+						<div class="col-sm-4">
+							{{ form_widget(form.mesto, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-1">
+							{{ form_label(form.psc, 'PSČ', {'attr': {'class': 'control-label'}}) }}
+						</div>
+						{{ form_errors(form.psc) }}
+						<div class="col-sm-4">
+							{{ form_widget(form.psc, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+					{{ form_rest(form) }} 
+					<br>
+					<div class="form-group">
+						<div class="col-sm-offset-1 col-sm-2">
+							<button type="submit" class="btn btn-default">Editovat</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

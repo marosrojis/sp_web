@@ -1,0 +1,49 @@
+{% extends "AutodopravaAppBundle::adminLayout.html.twig" %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-2 text-left">
+			<h1>{% block title %}Objednávky{% endblock %}</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="line_gray"></div>
+	</div>
+	<div class="content_page">
+		<div class="container">
+			<table class="table table-hover">
+				<thead>
+					<tr>
+						<th>ID objednávky</th>
+						<th>Zákazník</th>
+						<th>Auto</th>
+						<th>Datum</th>
+						<th>Vyřízeno</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for order in orders %}
+					<tr>
+						<td>{{ order.id_objednavky }}</td>
+						<td><a href="{{ path('profile', {'id': order.zakaznici_id}) }}">{{ order.jmeno }} {{ order.prijmeni }}</a></td>
+						<td>{{ order.nazev }}</td>
+						<td>{{ order.datum|date('d. m. Y H:i') }}</td>
+						<td>
+							<a href="{{ path('editObjednavky', {'id': order.id_objednavky}) }}">
+								{% if order.vyrizeno == 0 %}
+								<span class="glyphicon glyphicon-remove"></span>
+								{% else %}
+								<span class="glyphicon glyphicon-ok"></span>
+								{% endif %}
+							</a>
+						</td>
+					</tr>
+					{% endfor %}
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

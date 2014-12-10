@@ -1,0 +1,35 @@
+{% extends "AutodopravaAppBundle::layout.html.twig" %}
+
+{% block content %}
+<div class="content">
+	
+	<div class="text-about">
+		<div class="container col-md-10 col-md-offset-4"> 
+			<h1>O nás</h1>
+			{{ about | raw }}
+		</div>
+	</div>
+</div>
+<div class="footer container-fluid">
+	<div class="row">
+		<div class="bottom_line_gray col-md-12"></div>
+	</div>
+	<div class="row">
+		<div class="bottom_bg_blue">
+			<div class="bottom_map col-md-2 col-md-offset-3"></div>
+			<div class="bottom_info col-md-2 col-md-offset-3">
+				<h4>{{ contact.nazev }} </h4><br>
+				{{ contact.ulice }} <br><br>
+				{{ contact.mesto }}  <br><br>
+				{{ contact.psc}}
+			</div>
+			<div class="bottom_info2 col-md-2 col-md-offset-5">
+				Mobil: {{ contact.mobil }} <br><br>
+				Telefon: {{ contact.telefon }} <br><br>
+				Email: {{ contact.email }} <br><br>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

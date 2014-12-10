@@ -1,0 +1,130 @@
+{% extends "AutodopravaAppBundle::adminLayout.html.twig" %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-2 text-left">
+			<h1>{% block title %}{{ typForm }}{% endblock %}</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="line_gray"></div>
+	</div>
+	<div class="content_page">
+		<div class="row">
+			<div class="container col-md-offset-2 col-md-7">
+				<form method="POST" id="form" enctype="multipart/form-data" class="form-horizontal" role="form">
+					{{ form_errors(form) }}
+					<div class="form-group">
+						<div class="col-sm-2">
+							{{ form_label(form.nazev, 'Název', {'attr': {'class': 'control-label'}}) }}
+						</div>
+						{{ form_errors(form.nazev) }}
+						<div class="col-sm-4">
+							{{ form_widget(form.nazev, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2">
+							{{ form_label(form.objem, 'Objem', {'attr': {'class': 'control-label'}}) }}
+						</div>
+						{{ form_errors(form.objem) }}
+						<div class="col-sm-4">
+							{{ form_widget(form.objem, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2">
+							{{ form_label(form.nosnost, 'Nosnost', {'attr': {'class': 'control-label'}}) }}
+						</div>
+						{{ form_errors(form.nosnost) }}
+						<div class="col-sm-4">
+							{{ form_widget(form.nosnost, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2">
+							{{ form_label(form.pocet, 'Počet', {'attr': {'class': 'control-label'}}) }}
+						</div>
+						{{ form_errors(form.pocet) }}
+						<div class="col-sm-4">
+							{{ form_widget(form.pocet, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2">
+							{{ form_label(form.vybaveni, 'Vybavení', {'attr': {'class': 'control-label'}}) }}
+						</div>
+						{{ form_errors(form.vybaveni) }}
+						<div class="col-sm-4">
+							{{ form_widget(form.vybaveni, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2">
+							{{ form_label(form.pocet_sezeni, 'Počet míst k sezení', {'attr': {'class': 'control-label'}}) }}
+						</div>
+						{{ form_errors(form.pocet_sezeni) }}
+						<div class="col-sm-4">
+							{{ form_widget(form.pocet_sezeni, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2">
+							{{ form_label(form.technika, 'Technika', {'attr': {'class': 'control-label'}}) }}
+						</div>
+						{{ form_errors(form.technika) }}
+						<div class="col-sm-4">
+							{{ form_widget(form.technika, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2">
+							{{ form_label(form.delka_plochy, 'Délka plochy', {'attr': {'class': 'control-label'}}) }}
+						</div>
+						{{ form_errors(form.delka_plochy) }}
+						<div class="col-sm-4">
+							{{ form_widget(form.delka_plochy, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2">
+							{{ form_label(form.cena, 'Cena', {'attr': {'class': 'control-label'}}) }}
+						</div>
+						{{ form_errors(form.cena) }}
+						<div class="col-sm-4">
+							{{ form_widget(form.cena, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2">
+							{{ form_label(form.preprava_id, 'Typ přepravy', {'attr': {'class': 'form-control'}}) }}
+						</div>
+						{{ form_errors(form.preprava_id) }}
+						<div class="col-sm-4">
+							{{ form_widget(form.preprava_id, {'attr': {'class': 'form-control'}}) }}
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-2">
+							{{ form_label(form.image, 'Foto auta', {'attr': {'class': 'form-control'}}) }}
+						</div>
+						{{ form_errors(form.image) }}
+						<div class="col-sm-4">
+							{{ form_widget(form.image) }}
+						</div>
+					</div>
+					{{ form_rest(form) }} 
+					<br>
+					<div class="form-group">
+						<div class="col-sm-offset-1 col-sm-2">
+							<button type="submit" class="btn btn-default">{{ typForm }}</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

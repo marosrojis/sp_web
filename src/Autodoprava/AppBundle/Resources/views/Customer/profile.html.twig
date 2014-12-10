@@ -1,0 +1,35 @@
+{% extends "AutodopravaAppBundle::adminLayout.html.twig" %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-2 text-left">
+			<h1>Zákazník - {% block title %}{{ customer.jmeno }} {{ customer.prijmeni }} {% endblock %}</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="line_gray"></div>
+	</div>
+	<div class="content_page">
+		<div class="container customer">
+			<div class="row">
+				<div class="customer_info col-md-1">Adresa</div>
+				<div class="col-md-3 customer_detail">
+					<div class="row">{{ customer.ulice }}</div>
+					<div class="row">{{ customer.mesto }}</div>
+					<div class="row">{{ customer.psc }}</div>
+				</div>
+				<div class="customer_info col-md-1">Email</div>
+				<div class="col-md-3 customer_detail">
+					<div class="row">{{ customer.email }}</div>
+				</div>
+				<div class="row">
+					<div class="customer_info col-md-2">Počet objednávek</div>
+					{{ countOrders }} (vyřízeno: {{ countOrdersOK }})
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

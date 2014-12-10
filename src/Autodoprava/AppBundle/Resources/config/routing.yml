@@ -1,0 +1,96 @@
+autodoprava_app_homepage:
+    path:     /
+    defaults: { _controller: AutodopravaAppBundle:Main:index }
+
+_pickup:
+    path:     /preprava/pickup
+    defaults: { _controller: AutodopravaAppBundle:Preprava:Pickup }
+
+_dodavkova:
+    path:     /preprava/dodavkova
+    defaults: { _controller: AutodopravaAppBundle:Preprava:Dodavkova }
+
+_nakladni:
+    path:     /preprava/nakladni
+    defaults: { _controller: AutodopravaAppBundle:Preprava:Nakladni }
+
+_stehovani:
+    path:     /stehovani
+    defaults: { _controller: AutodopravaAppBundle:Preprava:Stehovani }
+
+_skladovani:
+    path:     /skladovani
+    defaults: { _controller: AutodopravaAppBundle:Preprava:Skladovani }
+
+_objednavka:
+    path:     /objednavka/{transport}/{car}
+    defaults: { _controller: AutodopravaAppBundle:Preprava:Objednavka }
+
+indexAdmin:
+    path:     /admin
+    defaults: { _controller: AutodopravaAppBundle:Admin:index }
+
+indexObjednavky:
+    path:     /admin/objednavky/
+    defaults: { _controller: AutodopravaAppBundle:Objednavky:index }
+
+editObjednavky:
+    path:     /admin/objednavky/edit/{id}
+    defaults: { _controller: AutodopravaAppBundle:Objednavky:edit }
+
+profile:
+    path:     /admin/zakaznik/{id}
+    defaults: { _controller: AutodopravaAppBundle:Customer:profile }
+
+indexCar:
+    path:     /admin/auto
+    defaults: { _controller: AutodopravaAppBundle:Auto:index }
+
+edit_status_car:
+    path:     /admin/auto/editStatus/{id}
+    defaults: { _controller: AutodopravaAppBundle:Auto:editStatus }
+
+new_car:
+    path:     /admin/auto/pridat
+    defaults: { _controller: AutodopravaAppBundle:Auto:newCar }
+
+edit_car:
+    path:     /admin/auto/editovat/{id}
+    defaults: { _controller: AutodopravaAppBundle:Auto:editCar }
+
+foto_car:
+    path:     /admin/auto/foto/{idCar}
+    defaults: { _controller: AutodopravaAppBundle:Foto:fotoCar }
+
+edit_foto:
+    path:     /admin/auto/foto/edit/{id}
+    defaults: { _controller: AutodopravaAppBundle:Foto:editFoto }
+delete_foto:
+    path:     /admin/auto/foto/delete/{id}
+    defaults: { _controller: AutodopravaAppBundle:Foto:remove }
+editContact:
+    path:     /admin/kontakt/editovat
+    defaults: { _controller: AutodopravaAppBundle:Kontakt:edit }
+_offer:
+    path:     /nabidka
+    defaults: { _controller: AutodopravaAppBundle:Main:offer }
+
+o_nas:
+    path:     /admin/stranky/oNas
+    defaults: { _controller: AutodopravaAppBundle:Page:oNas }
+
+nabidkaAdmin:
+    path:     /admin/stranky/nabidka
+    defaults: { _controller: AutodopravaAppBundle:Page:nabidka }
+indexPage:
+    path:     /admin/stranky
+    defaults: { _controller: AutodopravaAppBundle:Page:index }
+stehovaniAdmin:
+    path:     /admin/stranky/stehovani
+    defaults: { _controller: AutodopravaAppBundle:Page:stehovani }
+skladovaniAdmin:
+    path:     /admin/stranky/skladovani
+    defaults: { _controller: AutodopravaAppBundle:Page:skladovani }
+_contact:
+    path:     /kontakt
+    defaults: { _controller: AutodopravaAppBundle:Main:contact }

@@ -1,0 +1,36 @@
+{% extends "AutodopravaAppBundle::adminLayout.html.twig" %}
+
+{% block content %}
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-10 col-md-offset-2 text-left">
+			<h1>{% block title %}Editace stránek{% endblock %}</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="line_gray col-md-12"></div>
+	</div>
+	<div class="content_page">
+		<div class="container col-md-offset-2 col-md-8">
+			<div class="row">
+				<h4>Vyberte si stránku, na které chcete editovat její obsah </h4>
+			</div>
+			<div class="row editPage">
+				<div class="col-md-2">
+					<a href="{{ path('o_nas') }}">O nás</a>
+				</div>
+				<div class="col-md-2">
+					<a href="{{ path('nabidkaAdmin') }}">Nabídka</a>
+				</div>
+				<div class="col-md-2">
+					<a href="{{ path('stehovaniAdmin') }}">Stěhování</a>
+				</div>
+				<div class="col-md-2">
+					<a href="{{ path('skladovaniAdmin') }}">Skladování</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{% endblock %}

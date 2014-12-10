@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+{% block head %}
+    {% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('bundles/app/bootstrap/dist/css/bootstrap.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/design.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/app/css/style.css') }}" />
+    <link rel="stylesheet" href="{{ asset('bundles/app/bxslider/jquery.bxslider.css') }}" />
+    {% endblock %}
+{% endblock %}
+
+{% block body %}
+{% block javascripts %}
+<script src="{{ asset('//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js') }}"></script>
+<script src="{{ asset('bundles/app/bxslider/jquery.bxslider.min.js') }}"></script>
+<script src="{{ asset('bundles/app/bootstrap/dist/js/bootstrap.js') }}"></script>
+{% endblock %}
+<div id="center">
+    <div id="background">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-3 menu_bg pull-left"></div>
+                <div id="logo"></div> 
+                <div class="col-md-7 menu_bg pull-right">
+                    <nav>
+                        <ul class="nav nav-pills row col-md-offset-2 menu">
+                            <li role="presentation" class="col-md-2 menu_line"><a href="{{ path('autodoprava_app_homepage') }}">domů</a></li>
+                            <li role="presentation" class="col-md-2 menu_line"><a href="{{ path('_offer') }}">nabídka</a></li>
+                            <li role="presentation" class="col-md-2 menu_line"><a href="{{ path('_contact') }}">kontakt</a></li>
+                        </ul>
+                    </nav>
+                </div> 
+            </div>
+            <div class="content_menu center-block">
+                <div class="type_cars col-md-9 col-md-offset-2">
+                    <nav>
+                        <ul class="nav nav-pills">
+                            <li role="presentation" class="col-md-2"><a href="{{ path('_pickup') }}">
+                                <div class="pick-up"></div>
+                                <div class="text">Pick-up přeprava</div>
+                            </a></li>
+                            <li role="presentation" class="col-md-2"><a href="{{ path('_dodavkova') }}">
+                                <div class="dod"></div>
+                                <div class="text">Dodávková přeprava</div>
+                            </a></li>
+                            <li role="presentation" class="col-md-2"><a href="{{ path('_nakladni') }}">
+                                <div class="nakl"></div>
+                                <div class="text">Nákladní přeprava</div>
+                            </a></li>
+                            <li role="presentation" class="col-md-2"><a href="{{ path('_stehovani') }}">
+                                <div class="steh"></div>
+                                <div class="text">Stěhování</div>
+                            </a></li>
+                            <li role="presentation" class="col-md-2"><a href="{{ path('_skladovani') }}">
+                                <div class="sklad"></div>
+                                <div class="text">Skladování</div>
+                            </a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+            <div class="flash-message">
+                {{ flashMessage }}
+            </div>
+            {% endfor %}
+        </div>
+        {% block content %}{% endblock %}
+        <div class="footer container-fluid">
+            <div class="row">
+                <footer>
+                    <div class="bottom_bg_black">
+                        Copyright © 2014 - www.autodoprava.cz <a href="{{ path('indexAdmin') }}">Administrace</a>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>           
+</div>
+{% endblock %}
