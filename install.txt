@@ -1,0 +1,12 @@
+Instalace databáze pro zprovoznění webu:
+
+Konfigurační soubor pro připojení k databázi se nalézá "app\config\parameters.yml", kde je třeba zadat údaje pro připojení k databázi
+Dále už stačí pouze načíst v databázi soubory "autodoprava_table.sql", který vytvoří tabulky, a "autodoprava_data.sql", který vloží do databáze testovací data.
+
+Přihlášení do redakčního systému:
+
+přihlašovací jméno: admin
+přihlašovací heslo: admin
+
+
+Pro testování je třeba ještě nakopírovat testovací fotky aut, které se nacházejí v "fotoCar.zip" do adresáře "web\bundles\app\img\cars\".
