@@ -1,0 +1,314 @@
+*{
+   margin:0;
+   padding:0
+}
+
+body 
+{
+	text-align: center;
+	padding: 0 0 0 0;
+ 	margin: 0px 0px 0px 0px;
+ 	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+}
+body img 
+{
+	border: 0;
+}
+
+h1
+{
+	font-size: 17pt;
+	color: rgb(36, 97, 189);
+}
+
+.flash-message
+{
+	min-width: 300px;
+	/*min-height: 150px;*/
+	margin: 20px 10px 20px 10px;
+	border: 2px solid rgb(149, 150, 153);
+	font-weight: bold;
+	font-size: 13pt;
+	padding: 15px 18px 15px 18px;
+	background-color: rgb(239, 239, 241);
+}
+
+#center 
+{
+	width: 100%;
+	margin: 0px auto;
+}
+
+.background {
+	background-color: #ffffff;
+	margin: 0 0 0 0;
+}
+
+.menu_bg
+{
+	background-image: url('../img/menu_bg.png');
+	height: 119px;
+	background-repeat: repeat-x;
+	margin: 11px 0 10px 0;
+}
+
+#logo
+{
+	background-image: url('../img/logo.png');
+	width: 211px;
+	height: 107px;
+	float: left;
+	background-repeat: no-repeat;
+	margin: 7px 0 0 8;
+}
+
+.upper_info_email
+{
+	position: relative;
+	top: -18px;
+}
+
+.menu
+{
+	position: relative;
+	top: 19px;
+}
+
+.menu li
+{
+	height: 62px;
+}
+
+.menu li:hover, .menu li:active
+{
+	height: 62px;
+	background-image: url('../img/menu_link_hover.png');
+	background-repeat: repeat-x;
+	text-decoration: underline;
+}
+
+.menu li a
+{
+	color: #ffffff;
+	padding: 22px 0px 4px 0px;
+}
+
+.menu li a:hover
+{
+	background: none;
+	color: #ffffff;
+}
+
+.menu_line
+{
+	/*width: 2px;*/
+	height: 62px;
+	background-image: url('../img/menu_items_border.png');
+	background-repeat: no-repeat;
+	float: left;
+}
+
+.content
+{
+	width: 70%;
+	float: left;
+}
+
+.content_menu
+{
+	/*width: 70%;*/
+	margin: 0px auto;
+	text-align: center;
+}
+
+.type_cars
+{
+	position: relative;
+	left: 18px;
+}
+
+.type_cars li
+{
+	height: 90px;
+	background-image: url('../img/cars_bg.png');
+	background-repeat: repeat-x;
+	border: 1px solid #b3b3b3;
+	margin: 0;
+	padding: 0;
+}
+
+.type_cars a
+{
+	color: #474747;
+	text-decoration: underline;
+}
+
+/*.type_cars li:hover, .type_cars li:active
+{
+	color: #11376f;
+	text-decoration: none;
+}*/
+
+.type_cars li a div
+{
+	padding: 0;
+	margin: 0px auto;
+}
+
+.type_cars li a:hover
+{
+	background: none;
+	color: #11376f;
+	text-decoration: none;
+}
+
+.type_cars .text
+{
+	width: 150px;
+	position: relative;
+	left: -13px;
+	font-size: 11pt;
+}
+
+.type_cars .pick-up
+{
+	background-image: url('../img/car_pick-up.png');
+	background-repeat: no-repeat;
+	width: 118px;
+	height: 51px;
+}
+
+/*.type_cars .pick-up:hover
+{
+	background-image: url('../img/car_pick-up_hover.png');
+	background-repeat: no-repeat;
+	width: 118px;
+	height: 51px;
+}*/
+
+.type_cars .dod
+{
+	background-image: url('../img/car_dodavka.png');
+	background-repeat: no-repeat;
+	width: 116px;
+	height: 51px;
+}
+
+.type_cars .nakl
+{
+	background-image: url('../img/car_nakladni.png');
+	background-repeat: no-repeat;
+	width: 114px;
+	height: 51px;
+}
+
+.type_cars .steh
+{
+	background-image: url('../img/car_nakladni.png');
+	background-repeat: no-repeat;
+	width: 114px;
+	height: 51px;
+}
+
+.type_cars .sklad
+{
+	background-image: url('../img/car_sklad.png');
+	background-repeat: no-repeat;
+	width: 68px;
+	height: 51px;
+}
+
+.content .text-about
+{
+	padding: 10px 0 38px 0;
+	text-align: left;
+	float: left;
+}
+
+.text-about h1
+{
+	color: #afafaf;
+	margin-bottom: 12px;
+}
+
+.footer
+{
+	width: 100%;
+}
+
+.bottom_line_gray
+{
+	background-image: url('../img/bottom_line_gray.png');
+	height: 20px;
+	background-repeat: repeat-x;
+}
+
+.bottom_bg_blue
+{
+	background-image: url('../img/bottom_bg_blue.png');
+	height: 259px;
+	background-repeat: repeat-x;
+}
+
+.bottom_bg_black
+{
+	background-image: url('../img/bottom_bg_black.png');
+	height: 40px;
+	background-repeat: repeat-x;
+	text-align: center;
+	padding-top: 10px;
+	color: white;
+}
+
+.bottom_map
+{
+	background-image: url('../img/map.png');
+	width: 233px;
+	height: 187px;
+	background-repeat: no-repeat;
+	margin-top: 38px; 
+}
+
+.bottom_info
+{
+	margin: 38px 0 0 0;
+	color: white;
+	text-align: left;
+}
+
+.bottom_info2
+{
+	margin: 94px 0 0 0;
+	color: white;
+	text-align: left;
+}
+
+.container-fluid {
+    padding: 0px;
+    /*width: 97.8%;*/
+}
+
+.content_page
+{
+	margin: 20px 0px 15px 0px;
+	text-align: left;
+}
+
+.line_gray
+{
+	height: 10px;
+	background-image: url('../img/gray_line.png');
+	background-repeat: repeat-x;
+/*	position: relative;
+	left: -25px;*/
+}
+.contactInfo
+{
+	margin-top: 50px;
+}
+
+.contactMargin
+{
+	margin-bottom: 40px;
+}
